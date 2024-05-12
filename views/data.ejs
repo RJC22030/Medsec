@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto-Condensed";
+        color: black;
+      }
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      a img {
+        width: 20vw;
+        height: 15vw;
+      }
+      a {
+        font-weight: 400;
+        color: black;
+      }
+      .navbar-brand img {
+        max-height: 3.4vw;
+        max-width: 10vw;
+        margin-left: 3vw;
+      }
+
+      .navbar-nav {
+        margin-right: auto;
+        margin-left: 25vw;
+      }
+      .navbar-nav li {
+        margin-left: 2vw;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        padding-bottom: 10px;
+      }
+      .navbar {
+        background-color: white;
+      }
+      .contact {
+        background-color: #0b82c7;
+        border-radius: 12px;
+        height: 36px;
+        width: 85px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        color: aliceblue;
+      }
+
+      .navbar-nav .nav-link::before,
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #007bff;
+        transition: width 0.3s ease;
+      }
+
+      .navbar-nav .nav-link::before {
+        top: 0;
+        right: 0;
+      }
+
+      .navbar-nav .nav-link::after {
+        bottom: 0;
+        left: 0;
+      }
+
+      .navbar-nav .nav-link:hover::before,
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .homepage-content {
+        padding: 100px 20px;
+        line-height: 1.5;
+      }
+
+      .homepage-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .get_started,
+      .learn_more {
+        padding: 10px 20px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .get_started {
+        background-color: #0b82c7;
+        color: #fff;
+      }
+
+      .learn_more {
+        background-color: #fff;
+        color: #0b82c7;
+      }
+
+      .half-screen-div {
+        margin-top: 140px;
+        margin-left: 25vw;
+        background-size: cover;
+        background-position: center;
+        background-image: url("Screenshot 2024-05-12 033932.png");
+        height: calc(70vh - 56px);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-out;
+      }
+      .homepage-content {
+        padding: 120px 20px;
+        line-height: 25px; /* Adjust padding as needed */
+      }
+      .logout {
+        background-color: rgb(237, 22, 22);
+        border-radius: 12px;
+        height: 36px;
+        width: 67px;
+        padding-top: 5px;
+        padding-left: 15px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        color: aliceblue;
+      }
+      .half-screen-div {
+        margin-top: 80px;
+        background-image: url(data_user1.png);
+        background-size: cover;
+        background-position: center;
+        height: calc(70vh - 56px);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-in {
+        animation: fadeIn 2s ease-out;
+      }
+      .technology-stack {
+        top: 100px;
+        padding: 50px 0;
+        background-color: #f8f9fa;
+      }
+      .technology-stack .card {
+        border: none;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .technology-stack .card img {
+        max-height: 200px;
+        object-fit: cover;
+      }
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .title-info {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .form {
+        max-width: 500px;
+        margin: auto;
+      }
+      .input-group {
+        margin-bottom: 20px;
+      }
+      .input-group input,
+      .textarea-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .input-group label,
+      .textarea-group label {
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+      }
+      .textarea-group textarea {
+        resize: vertical;
+      }
+      .button-div {
+        text-align: center;
+      }
+      .button-div button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .button-div button:hover {
+        background-color: #0056b3;
+      }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .social-media-img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        margin-right: 10px;
+        padding: 2px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .modal {
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .modal-content {
+        border-radius: 10px;
+        margin-top: 155px;
+      }
+
+      .modal-header {
+        border-bottom: none;
+      }
+
+      .modal-title {
+        color: #007bff;
+      }
+
+      .modal-body {
+        padding: 30px;
+      }
+
+      .modal-footer {
+        border-top: none;
+        justify-content: flex-end;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        border-radius: 5px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+
+      table {
+        width: 80%;
+        margin: auto;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: center;
+      }
+
+      thead {
+        background-color: #007bff;
+        color: white;
+      }
+
+      #myFilesDiv {
+        padding: 20px;
+        text-align: center;
+        border: 2px solid #007bff;
+        border-radius: 10px;
+        margin-top: 20px;
+        transform: translateY(10px);
+      }
+
+      #myFilesDiv.show {
+        transform: translateY(0);
+      }
+
+      #myFilesDiv h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      #myFilesDiv .row {
+        max-width: 200vw;
+        margin-left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo2.png" alt="Your Logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              data-toggle="modal"
+              data-target="#uploadImageModal"
+              >Upload Image</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="myFilesLink" href="#">My Files</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Requested Files</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Downloaded Files</a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link logout" data-target="data-user"
+              >Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid bg-light">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Div for content -->
+          <div class="homepage-content mt-5 ml-3 fade-in">
+            <h1>Hello <%= name %></h1>
+            <h1>Welcome to Your Healthcare Portal!</h1>
+            <p>
+              At Your Healthcare Portal, we prioritize your access to secure
+              medical data. Whether you're a healthcare professional or a
+              patient, our platform is designed to streamline the management and
+              retrieval of vital medical images.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="half-screen-div"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="uploadImageModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="uploadImageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="uploadImageModalLabel">Upload Image</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="fileName">File Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fileName"
+                  placeholder="Enter file name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="fileUpload">Choose File</label>
+                <input type="file" class="form-control-file" id="fileUpload" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="myFilesDiv" class="container-fluid bg-light" style="display: none">
+      <div class="row">
+        <div class="col-md-11">
+          <h2 class="my-4">My Files</h2>
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">File ID</th>
+                <th scope="col">File Name</th>
+                <th scope="col">Upload Time</th>
+                <th scope="col">Decryption Key</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Sample File 1</td>
+                <td>2024-05-05 10:00:00</td>
+                <td>DJKSK87555651</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document
+      .querySelector("#myFilesLink")
+      .addEventListener("click", function () {
+        document.querySelector("#myFilesDiv").style.display = "block";
+      });
+  </script>
+  <script
+    src="https://kit.fontawesome.com/2015da8192.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    window.addEventListener("beforeunload", function (e) {
+      fetch("/logout");
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

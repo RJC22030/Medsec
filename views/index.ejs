@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto-Condensed";
+        color: black;
+      }
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      a img {
+        width: 20vw;
+        height: 15vw;
+      }
+      a {
+        font-weight: 400;
+      }
+      .navbar-brand img {
+        max-height: 3.4vw;
+        max-width: 10vw;
+        margin-left: 3vw;
+      }
+
+      .navbar-nav {
+        margin-right: auto;
+        margin-left: 35vw;
+      }
+      .navbar-nav li {
+        margin-left: 2vw;
+      }
+      .navbar-nav .nav-link {
+        position: relative;
+        padding-bottom: 10px;
+      }
+      .navbar {
+        background-color: white;
+      }
+      .contact {
+        background-color: #0b82c7;
+        border-radius: 12px;
+        height: 36px;
+        width: 85px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        color: aliceblue;
+      }
+
+      .navbar-nav .nav-link::before,
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #007bff;
+        transition: width 0.3s ease;
+      }
+
+      .navbar-nav .nav-link::before {
+        top: 0;
+        right: 0;
+      }
+
+      .navbar-nav .nav-link::after {
+        bottom: 0;
+        left: 0;
+      }
+
+      .navbar-nav .nav-link:hover::before,
+      .navbar-nav .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .form-wrapper {
+        margin-top: 85px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: 40vw;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .signup-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 80%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-left: 45px;
+      }
+
+      .btn-success {
+        width: 100%;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #28a745;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn-success:hover {
+        background-color: #218838;
+      }
+
+      .mssg {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .bg-danger {
+        background-color: #dc3545;
+        color: #fff;
+        visibility: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      body {
+        background-size: 80vw; 
+        background-position: center;
+        background-position-y: 0.5vh;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="bg-video">
+      <source
+        src="1658_dna_genetics_genetic_DNAStrandRotateLoopVidevo.mov"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo2.png" alt="Your Logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign">Data User</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign" data-target="data-owner"
+              >Data Owner</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cloud Server</a>
+          </li>
+          <li class="nav-item">
+            <button class="contact">Contact</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container signup-container">
+      <div class="row justify-content-end">
+        
+        <div class="col-md-11 offset-7">
+          
+          <div class="form-wrapper">
+            <center>
+              <h2>Join US Today</h2>
+              <p>Signup to access exclusive features</p>
+            </center>
+            <form id="form1" method="post">
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required=""
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  required=""
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required=""
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  name="passwordConf"
+                  placeholder="Confirm Password"
+                  required=""
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-success" />
+              </div>
+            </form>
+            <div class="mssg bg-danger">
+              <span id="check"></span>
+            </div>
+            <div>
+              <span>Already Registered! <a href="/login">Login</a></span>
+            </div>
+            <div id="LangTable"><a href="/login" id="aa"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/2015da8192.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>
